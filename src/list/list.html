@@ -1,0 +1,4 @@
+<div ng-repeat="project in $ctrl.projects">
+    <h3>{{ project.headline }}</h3>
+    <p><a ui-sref="edit({project_id: project.id})">Edit</a></p>
+</div>

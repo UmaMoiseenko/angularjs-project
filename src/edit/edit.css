@@ -1,0 +1,27 @@
+.form-section {
+    width: 100%;
+    margin-bottom: 2.5rem;
+}
+
+.input-fullWidth {
+    display: block;
+    min-width: 33rem;
+}
+
+.form-section  label {
+    display: inline-block;
+    min-width: 20rem;
+}
+
+.errorMessage {
+    display: block;
+    position: absolute;
+    font-size: 0.75rem;
+    color: red;
+}
+
+.errorMessage--long {
+    width: 32rem;
+    margin-top: 1rem;
+    text-align: center;
+}

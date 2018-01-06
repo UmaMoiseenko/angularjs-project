@@ -1,0 +1,135 @@
+<a ui-sref="list">Home</a>
+<h3>
+    {{ $ctrl.project.headline }}
+</h3>
+
+<p>
+    <form name="projectForm" novalidate role="form">
+        <div class="form-section">
+            <label>
+                Name:
+                <input
+                    class="input-fullWidth"
+                    type="text"
+                    name="headline"
+                    ng-model="formData.headline"/>
+            </label>
+        </div>
+
+        <div class="form-section">
+            <label>Target Check Size: </label>
+            <div>
+                <label>
+                    min
+                    <input
+                        type="text"
+                        name="target_check_size_min"
+                        number-formatter
+                        ng-model="formData.target_check_size_min" />
+                    <span
+                        ng-if="!isValidSyntax(projectForm.target_check_size_min)"
+                        class="errorMessage">
+                        Invalid Syntax
+                    </span>
+                </label>
+
+                <label>
+                    max
+                    <input
+                        type="text"
+                        name="target_check_size_max"
+                        number-formatter
+                        ng-model="formData.target_check_size_max" />
+
+                    <span
+                        ng-if="!isValidSyntax(projectForm.target_check_size_max)"
+                        class="errorMessage">
+                        Invalid Syntax
+                    </span>
+                </label>
+            </div>
+            <span
+                ng-if="!minMaxValidate('target_check_size')"
+                class="errorMessage errorMessage--long">
+                Check your MIN and MAX
+            </span>
+        </div>
+        <div class="form-section">
+            <label>Target Revenue: </label>
+            <div>
+                <label>
+                    min
+                    <input
+                        type="text"
+                        name="target_revenue_min"
+                        number-formatter
+                        ng-model="formData.target_revenue_min" />
+                    <span
+                        ng-if="!isValidSyntax(projectForm.target_revenue_min)"
+                        class="errorMessage">
+                        Invalid Syntax
+                    </span>
+                </label>
+                <label>
+                    max
+                    <input
+                        type="text"
+                        name="target_revenue_max"
+                        number-formatter
+                        ng-model="formData.target_revenue_max" />
+                    <span
+                        ng-if="!isValidSyntax(projectForm.target_revenue_max)"
+                        class="errorMessage">
+                        Invalid Syntax
+                    </span>
+                </label>
+            </div>
+            <span
+                ng-if="!minMaxValidate('target_revenue')"
+                class="errorMessage errorMessage--long">
+                Check your MIN and MAX
+            </span>
+        </div>
+        <div class="form-section">
+            <label>Target EBITDA:</label>
+            <div>
+                <label>
+                    min
+                    <input
+                        type="text"
+                        name="target_ebitda_min"
+                        number-formatter
+                        ng-model="formData.target_ebitda_min" />
+                    <span
+                        ng-if="!isValidSyntax(projectForm.target_ebitda_min)"
+                        class="errorMessage">
+                        Invalid Syntax
+                    </span>
+                </label>
+
+                <label>
+                    max
+                    <input
+                        type="text"
+                        name="target_ebitda_max"
+                        number-formatter
+                        ng-model="formData.target_ebitda_max" />
+                    <span
+                        ng-if="!isValidSyntax(projectForm.target_ebitda_max)"
+                        class="errorMessage">
+                        Invalid Syntax
+                    </span>
+                </label>
+            </div>
+            <span
+                ng-if="!minMaxValidate('target_ebitda')"
+                class="errorMessage errorMessage--long">
+                Check your MIN and MAX
+            </span>
+        </div>
+
+        <button type="submit" ng-click="updateProject()">
+            Save
+        </button>
+    </form>
+</p>
